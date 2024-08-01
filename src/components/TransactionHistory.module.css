@@ -1,0 +1,32 @@
+.table {
+    min-width: 1280px;
+    margin: 20px auto;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid black;
+
+}
+
+
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid black;
+}
+
+tr {
+    background-color: #1c090958;
+    color: black;
+}
+
+
+tr:nth-child(2n + 1) {
+    background-color: #fafafa;
+}
+
+.tableHead>tr {
+    background-color: black;
+    color: white;
+}
