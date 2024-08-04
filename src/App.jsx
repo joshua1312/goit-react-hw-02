@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Description from './Description/Description.jsx';
-import Feedback from './Feedback/Feedback.jsx';
-import Options from './Options/Options.jsx';
-import Notification from './Notification/Notification.jsx';
+import Description from './components/Description/Description.jsx';
+import Feedback from './components/Feedback/Feedback.jsx';
+import Options from './components/Options/Options.jsx';
+import Notification from './components/Notification/Notification.jsx';
 
 const App = () => {
 
@@ -38,7 +38,7 @@ const App = () => {
 
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
 
-  const dealOfPositive = totalFeedback ? Math.round(
+  const positiveFeedback = totalFeedback ? Math.round(
     (feedback.good / totalFeedback) * 100
   ) : 0;
 
@@ -54,7 +54,7 @@ const App = () => {
         <Feedback
           feedback={feedback}
           totalFeedback={totalFeedback}
-          dealOfPositive={dealOfPositive}
+          positiveFeedback={positiveFeedback}
         />
       ) : (
         <Notification />
@@ -62,3 +62,5 @@ const App = () => {
     </>
   );
 };
+
+export default App

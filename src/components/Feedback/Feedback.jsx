@@ -1,18 +1,17 @@
-import css from "./FriendListItem.module.css"
-import clsx from "clsx";
-const FriendListItem = ({
-    avatar, name, status
-}) => {
+import css from './Feedback.module.css';
+
+const Feedback = ({ feedback, totalFeedback, positiveFeedback }) => {
     return (
         <div>
-            <img src={avatar} alt="Avatar" width="48" />
-            <p className="textName">{name} </p>
-            <p className={clsx(css.status, {
-                [css.online]: status === true,
-                [css.offline]: status === false
-            })}>{status === true ? "Online" : "Offline"}</p>
-        </div >
-    );
-};
+            <ul className={css.feedback}>
+                <li>Good: {feedback.good}</li>
+                <li>Neutral: {feedback.neutral}</li>
+                <li>Bad: {feedback.bad}</li>
+                <li>Total: {totalFeedback}</li>
+                <li>Positive: {positiveFeedback}%</li>
+            </ul>
+        </div>
+    )
+}
 
-export default FriendListItem;
+export default Feedback
