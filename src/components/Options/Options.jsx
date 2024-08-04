@@ -1,17 +1,14 @@
-import FriendListItem from "../Feedback/Feedback.jsx";
-import css from "./FriendList.module.css"
+import css from './Options.module.css';
 
-const FriendList = ({ friends }) => {
+const Options = ({ updateFeedback, resetFeedback, totalFeedback }) => {
     return (
-        <ul className={css.friendsList}>{friends.map((friend_n) => (
-            <li key={friend_n.id} className={css.friendsItem}>
-                <FriendListItem
-                    avatar={friend_n.avatar}
-                    name={friend_n.name}
-                    status={friend_n.isOnline} />
-            </li>
-        ))}
-        </ul>
-    )
-}
-export default FriendList;
+        <div className={css.options}>
+            <button onClick={() => updateFeedback('good')}>Good</button>
+            <button onClick={() => updateFeedback('neutral')}>Neutral</button>
+            <button onClick={() => updateFeedback('bad')}>Bad</button>
+            {totalFeedback > 0 && <button onClick={resetFeedback}>Reset</button>}
+        </div>
+    );
+};
+
+export default Options

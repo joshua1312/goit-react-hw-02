@@ -1,28 +1,11 @@
-import css from "./TransactionHistory.module.css"
+import css from './Notification.module.css';
 
-const TransactionHistory = ({ items }) => {
+const Notification = () => {
     return (
-        <table className={css.table}>
-            <thead className={css.tableHead}>
-                <tr>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Currency</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                {items.map((prop) => (
-
-                    <tr className={css.tableRecord} key={prop.id}>
-                        <td>{prop.type}</td>
-                        <td>{prop.amount}</td>
-                        <td>{prop.currency}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
+        <p className={css.notification}>
+            No feedback yet
+        </p>
     );
 };
 
-export default TransactionHistory;
+export default Notification
