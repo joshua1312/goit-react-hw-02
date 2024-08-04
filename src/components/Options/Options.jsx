@@ -1,4 +1,4 @@
-import FriendListItem from "./FriendListItem.jsx";
+import FriendListItem from "../Feedback/Feedback.jsx";
 import css from "./FriendList.module.css"
 
 const FriendList = ({ friends }) => {
